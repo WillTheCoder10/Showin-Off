@@ -1,0 +1,51 @@
+embed <drac2>
+uv = "OmniXP"
+uvName = "Omni-XP"
+set_uvar_nx(uv, dump_json({"1": 0, "2": 0, "3": 0, "4": 0}))
+auth = ctx.author.display_name
+dictUV = load_json(get_uvar(uv))
+tier = "&1&"
+val = "&2&"
+setVal = "&3&"
+
+if any([tier.lower() == "help", tier == "?", tier == "&1"+"&"]):
+ return f'''-title "{uvName}" -desc "This alias is used to track Omni-XP in each tier.\n\n`!omni` - Brings up this screen.\n`!omni <tier>` - Checks how much Omni-XP you have in that tier.\n`!omni <tier> [+/-]#` or `!omni <tier> set #` - Modifies how much Omni-XP you have in that tier.\n\nTier is any number from 1-4 (T4 includes Post-20.)"'''
+
+try:
+ tierVal = dictUV[tier]
+except "KeyError":
+ err("Not a valid tier. Please see `!omni`.")
+
+tierName = f"T{tier}"
+
+if val[:1] == '+':
+    plus = int(val[1:]) if val[1:].isdigit() else False
+else:
+    plus = int(val) if val.isdigit() else False
+minus = int(val[1:]) if val[1:].isdigit() and val[:1] == '-' else False
+sets = int(setVal) if (setVal.isdigit()) and (val == "set") else False
+
+if minus:
+    tierVal -= minus
+    gainloss = f"{auth} uses some of their {tierName} {uvName}!"
+    sign = f"(-{minus})"
+elif plus:
+    tierVal += plus
+    gainloss = f"{auth} gains some {tierName} {uvName}!"
+    sign = f'(+{plus})'
+elif sets or str(sets) == "0":
+    before = tierVal
+    tierVal = sets
+    difference = tierVal - before
+    gainloss = f"{auth} uses some of their {tierName} {uvName}!" if str(difference)[:1] == '-' else f"{auth} gains some {tierName} {uvName}!"
+    sign = f'({difference:,})' if str(difference)[:1] == '-' else f'(+{difference:,})'
+
+if (not plus) and (not minus) and (not sets) and (str(sets) != "0"):
+    output = f'''-title "{auth} checks their {tierName} {uvName}!" -desc "You have {tierVal:,} {uvName} in {tierName}!"'''
+else:
+    output = f'''-title "{gainloss}" -f "{tierName} {uvName}|{tierVal:,} {sign}"'''
+
+dictUV[tier] = tierVal
+set_uvar(uv, dump_json(dictUV))
+return output
+</drac2>
