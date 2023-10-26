@@ -1,0 +1,58 @@
+embed _ _
+<drac2>
+using(
+utils="55efa8a5-fe46-46c2-be73-10cbd096754a"
+)
+n = "\n"
+hbList = get_svar("hb_list").split(", ")
+inp = &ARGS&
+inp = [x.replace("'", "’") for x in inp]
+output = ""
+
+def jsonParse(toParse=hbList):
+ hbFinal = {}
+ for hb in toParse:
+  hbName = hb[hb.rfind('_')+1:].replace("0", " ").title()
+  hbData = load_json(get_svar(hb))
+
+  if hbName[-1].isdigit():
+   hbJson = hbData
+  else:
+   hbJson = {hbName: hbData}
+
+  hbFinal.update(hbJson)
+
+ for category, value in hbFinal.items():
+  if typeof(value) == "SafeDict":
+   if (hbSubSvars := value.get("svars")):
+    hbFinal[category] = jsonParse(hbSubSvars)
+
+ return hbFinal
+
+hbCategories = jsonParse()
+
+if not inp:
+ output = "\n- ".join(hbCategories.keys())
+ output = f'''-title "Homebrew - Categories" -desc "- {output}"'''
+
+else:
+ hb = utils.math.recurse_search(inp, hbCategories, "Homebrew")
+ 
+ if not hb:
+  output = f'''-title "Homebrew - 404" -desc "That homebrew or homebrew category wasn't found."'''
+
+ elif typeof(hb[1]) == "SafeDict":
+  strList = []
+
+  for key, value in hb[1].items():
+   strList.append(f"- {key}") if key != "NA" else None
+
+  strList = "\n".join(strList)
+  output = f'''-title "{hb[2].title()} - {hb[0].title()}" -desc "{strList}"'''
+
+ else:
+  output = f'''-title "{hb[2].title()} - {hb[0]}" -desc "\n{hb[1]}"'''
+
+return output
+</drac2>
+-footer "!homebrew made by codethewill & valskerm"
