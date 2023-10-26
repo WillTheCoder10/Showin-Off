@@ -1,0 +1,34 @@
+embed
+<drac2>
+taxStr = []
+i = 0
+n = '\n'
+total = 0
+
+for item in "&*&".split(" "):
+ item = item.split("|")
+ i += 1
+ try:
+  rr = int(item[1]) if len(item) > 1 else 1
+  gold = float(item[0].replace(',', ''))
+ except "ValueError":
+  err("All inputs must be a number.\nPing @codethewill if you need help.")
+
+ tax = .2 if gold >= 20000 else .05 if gold >= 200 else 0
+
+ extra = tax*gold
+ extraTotal = extra*rr
+
+ subtotalNoTax = gold*rr
+ subtotal = subtotalNoTax+extraTotal
+ subtotalNoTax = f"{subtotalNoTax:,}"
+ extraTotal = f"{extraTotal:,}"
+
+ finalStr = f'''-f "Tax {i}:|Item: {rr+' items worth ' if rr != 1 else ''}{gold:,}gp{' each' if rr != 1 else ''}\nTax (Percent): {tax*100}%\nTax: {extra:,}gp{' each' if rr != 1 else ''}\n{n+'Tax (Total): '+extraTotal+'gp' if all([rr != 1, extra > 0]) else ''}{n+'Subtotal (No Tax): '+subtotalNoTax+' gp' if extra > 0 else ''}\nSubtotal: {subtotal:,}gp"'''
+
+ total += subtotal
+
+ taxStr.append(finalStr)
+
+return f'''-title "Tax" {" ".join(taxStr)} -f "Total|{total:,}gp" -footer "!tax made by CodeTheWill"'''
+</drac2>
