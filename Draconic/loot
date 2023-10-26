@@ -1,0 +1,127 @@
+embed
+-title "Loot"
+<drac2>
+output = ""
+table = load_json(get_gvar("354e7550-71af-4e9a-99f3-b91d9614a884"))
+costs = load_json(get_gvar("204e834f-0b89-4952-8af0-c202280e85e7"))
+spellList = load_yaml(get_gvar("7d14dd61-1ba8-4b94-9e0e-22e13ea55c31"))
+special = load_yaml(get_gvar("350c8d3c-33d7-457e-bedb-74d68e60025c")) #this one
+input = "&*&".lower() if "&*&" else None
+arg = argparse(&ARGS&)
+rlls = arg.last("rr", 1, int) if arg.last("rr", "1").isdigit() else 1
+
+if any([input == "?", input == "help", input == None]):
+ output = '''-desc "This alias is used to roll for Loot (Only DMs and DMTs can use this functionality, you cannot roll your own loot) or to view items on a Loot Table.\n\n To roll for random Loot using a set criteria:\n `!loot <Rarity> <Table> [-s/-show]` \n\n `-s` is an optional argument, but if you add it it'll display the favor cost and items in that table instead of rolling for a random item.\n\n**Rarities:**\n Common\n Uncommon\n Rare\n Vrare\n Legendary\n Super Legendary\n\n**Tables:**\n Armament\n Wondrous\n +Weapons\n +Armor\n Consumables\n"'''
+
+elif input:
+ rarity = "&1&".lower()
+ type = "&2&".lower()
+ rarityFound = False
+ typeFound = False
+ for key in table:
+  if rarity in key.lower():
+   rarity = key
+   rarityFound = True
+   for k1 in table[rarity]:
+    if type in k1.lower():
+     type = k1
+     typeFound = True
+
+ randomRoll = False
+ 
+ if table[rarity][type] == None:
+  err(f'''There are no {rarity} {type} items!''')
+
+ else:
+  if not (arg.last("s", False) or arg.last("show", False)):
+   randomRoll = True
+
+   if all([randomRoll]):
+    allLoot = []
+    allNewLoot = []
+
+    while rlls > 0:
+     allLoot.append(randchoice(table[rarity][type]))
+     rlls -= 1
+
+    for loot in allLoot:
+     extraStr = ""
+
+     if any(["Spell Scroll" in loot, "Spellwrought Tattoo" in loot]):
+      spell = randchoice(spellList[int(loot[loot.find("(")+1]) if loot[loot.find("(")+1] != "c" else 0])
+      extraStr = f'''; {spell}'''
+
+     for x in special:
+      if loot == x:
+       l = special[loot]
+       appendTo = ""
+       for thing in l["dataList"]:
+        r = roll(thing[0]) if not typeof(thing[0]) == "SafeList" else roll("1d"+str(len(thing[0])))
+
+        appendTo += f'''; {thing[1].replace("###", str(r))}'''
+
+        if "&&&" in appendTo:
+            if "Spell Bottle" in loot:
+                extraStr += f'''; {thing[1].replace("&&&", randchoice(spellList[r]))}'''
+
+        else:
+         extraStr += appendTo
+
+        if typeof(thing[0]) == "SafeList":
+         extraStr += f'''; {thing[1].replace("&&&", thing[0][r-1])}'''
+     allNewLoot.append(loot.strip()+extraStr)
+
+   lootNDOG = [] 
+   for i in allNewLoot: 
+    if i not in lootNDOG: 
+     lootNDOG.append(i)
+
+   lootND = []
+   for i in lootNDOG:
+    if all([i not in lootND, i[:i.find(";")+1] not in lootND]):
+     lootND.append(i[:i.find(";")+1]) if ";" in i else lootND.append(i)
+
+   aLF = []
+   for loot in lootND:
+    if ";" in loot:
+     item = loot[:loot.find(";")]
+     total = 0
+
+     lootToParse = [x for x in lootNDOG if item in x]
+     lootSort =[]
+
+     for typeMod in lootToParse:
+      randMod = typeMod[typeMod.find(";")+2:]
+      lootSort.append(f"{allNewLoot.count(typeMod)}x {randMod}")
+      total += allNewLoot.count(typeMod)
+
+     lootSort.sort(key = lambda x: (x[x.find("x")+2:], -int(x[:x.find("x")])))
+     lootSorted = "\n> ".join(lootSort)
+     final = f"{total}x {item}:\n> {lootSorted}"
+
+     aLF.append(final)
+
+    else:
+     lootIN = allNewLoot.count(loot)
+     final = f"{lootIN}x {loot}"
+     aLF.append(final)
+
+   aLF.sort(key = lambda x: (x[x.find("x")+2:], -int(x[:x.find("x")])))
+     
+   allNewLoot = ",\n".join(aLF)
+   output = f'''-desc "Rolling for {arg.last("rr", 1) if arg.last("rr", "1").isdigit() else 1} random {rarity} {type} Item...\n\n**Loot rolled:**\n{allNewLoot}"'''
+
+  else:
+   lootList = []
+   for x in table[rarity][type]:
+    lootList.append(x)
+   listStr = " \n".join(lootList)
+   rollC = int(costs[rarity][type][0][:costs[rarity][type][0].find("Favor")-1])
+   chooseC = rollC*5
+
+   output = f'''-title "{rarity} {type} Items" -desc "{rollC:,} Favor to roll\n{chooseC:,} Favor to choose\n\n```\n{listStr}\n```"'''
+
+
+return output
+</drac2>
+-footer "!loot made by Valskerm & CodeTheWill, with help from XtreamMB | !loot ?"
