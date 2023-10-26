@@ -1,0 +1,75 @@
+embed
+-title "Herb Gathering"
+-thumb "{{image}}"
+<drac2>
+arg = argparse(&ARGS&)
+n = "\n"
+
+if any(["&1&" == "&1"+"&", "&1&" == "?", "&1&" == "help"]):
+ output = '''-desc 'This alias is used to harvest herbs.\n\n`!herbgather <skill> [-rarity "rarity"] [-target] [args...] [-name "name"]`\n\nYou can input a `-rarity` to get the DC of the herb, allowing the alias to calculate how many herbs total you have gotten given the result of the skill check(s).\n\nYou can input `-target` to alter the DC of the herbs, or to use it as a visual indicator that you are targeting rather than getting a random herb.\n\nYou can input the `-name` of the herb to automatically put them into the `!bag` alias. This will only work if:\n1. You have a bag named "Herbs" or "Herb" in the `!bag` alias and
+2. You have inputted a valid `-rarity`.\''''
+
+else:
+ rarity = arg.last("rarity", "").lower()
+ rarity = "uncommon" if "uncommon" in rarity else "common" if "common" in rarity else "vrare" if any(["vrare" in rarity, "very rare" in rarity]) else "rare" if "rare" in rarity else err(f'"{rarity}" wasn\'t recognized as a rarity.\nThe available rarities are: Common, Uncommon, Rare, and Vrare.') if rarity else None
+ targ = arg.get("target", False)
+ nameHerb = arg.last("name", False)
+ nameHerb = nameHerb.title() if nameHerb else False
+ bag = get("bags", False)
+ dc = [13, 10, 17, 20] if not targ else [17, 13, 20, 23]
+ dc = dc[0 if "uncommon" in rarity else 1 if "common" in rarity else 2 if rarity == "rare" else 3] if rarity else None
+ herbSkill = None
+ herbName = None
+
+ for name, skill in character().skills:
+  if "&1&" in name:
+   herbSkill = skill
+   herbName = name.lower()
+
+ if not herbSkill:
+  err("\"&1&\" wasn't a recognized skill.\nFor help, use `!herbgather ?`.")
+
+ if all([herbName != "medicine", herbName != "arcana", herbName != "nature"]):
+  err("There are only three skills allowed to gather herbs with:\nArcana, Medicine, and Nature.")
+
+ rll = herbSkill.d20(base_adv=arg.adv(boolwise=True), min_val=10 if all([character().csettings["talent"], herbSkill.prof >= 1]) else None)
+ for b in arg.get("b", []):
+  rll += f"+{b}"
+
+ rlls = []
+ herbs = 0
+ for i in range(arg.last("rr", 1, int)):
+  rllN = vroll(rll)
+  if rarity:
+   herbs += 1 if rllN.total >= dc else 0
+   sf = "Success!" if rllN.total >= dc else "Failure."
+   if rllN.total >= dc+10:
+    herbs += 1
+    sf += "; 🔟"
+   if all([rllN.result.crit == 1, rllN.total >= dc]):
+    herbs += 1
+    sf += "; <:nat20:819976856350621716>"
+  rlls.append(f'''\n\n**{herbName.title()} Roll #{i+1}**:\n{rllN}{"; "+sf if rarity else ""}''')
+
+ bagTF = False
+ if all([nameHerb, bag, rarity]):
+  bag = load_json(bag)
+  for name, stored in bag:
+   if any([name.lower() == 'herbs', name.lower() == 'herb']):
+    bagTF = True
+    if stored.get(nameHerb):
+     stored[nameHerb] += herbs
+     new = stored[nameHerb]
+     break
+    else:
+     stored[nameHerb] = herbs
+     new = stored[nameHerb]
+     break
+ 
+  character().set_cvar("bags", dump_json(bag))
+
+ output = f'''-desc "**Herb Gatherer**: {character().name}\n**Rarity**: {rarity.title() if rarity else "N/A"}\n**DC**: {dc if rarity else "N/A"}{" (Targeted)" if targ else ""} {"".join(rlls)}" {'-f "Total Herbs Gathered|'+herbs+('x '+nameHerb+n+n+'Added herbs to `!bag` for a total of '+new+'x '+nameHerb+'!' if bagTF else '')+'"' if rarity else ""}'''
+
+return output 
+</drac2>
+-footer "!herbgather by codethewill | !herbgather ?"
