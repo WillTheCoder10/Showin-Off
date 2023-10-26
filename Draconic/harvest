@@ -1,0 +1,71 @@
+embed
+-title "Harvesting"
+<drac2>
+input = &ARGS&
+arg = argparse(&ARGS&)
+ch = character()
+c = input[0].lower() if len(input) >= 1 else None
+monCR = input[1].lower() if len(input) >= 2 else None
+frac = [("1/2", "0.5"), ("1/4", "0.25"), ("1/8", "0.125")]
+
+if typeof(monCR) == "str":
+ for x in frac:
+  if monCR == x[0]:
+   monCR = x[1]
+   break
+
+err("Invalid Input. Use `!harvest ?` for directions on how to use this alias.") if all([not "&*&" == "?", not "&*&" == "", any([not c, not monCR])]) else None
+
+if not any(["&*&" == "?", "&*&" == ""]):
+ cb = combat().get_combatant(monCR) if all([not monCR.isdigit(), combat()]) else None
+
+ cFound = False
+ for x, y in ch.skills:
+  if not any([x == "nature", x == "investigation", x == "survival"]):
+   continue
+  if c in x:
+   cN = x.title()
+   c = y
+   cFound = True
+   break
+
+ err(f'''Only the skills "Investigation", "Survival", and "Nature" are allowed.''') if not cFound else None
+
+ monCR = cb.levels.total_level if cb else float(monCR) if all([monCR.replace('.','',1).isdigit(), monCR.count('.') < 2]) else float(monCR) if monCR.isdigit() else err(f'''{monCR} not found in current combat.''')
+
+
+ DC = [13, 17, 21, 24, 26][4 if monCR >= 19 else 3 if monCR >= 14 else 2 if monCR >= 9 else 1 if monCR >= 4 else 0]
+
+ adv = arg.adv(boolwise = True)
+ b = ""
+ if arg.get("b", False):
+  for x in arg.get("b"):
+   b += "+"+x
+
+ b += "+1d6[guidance]" if arg.get("guidance", False) else ""
+ b += "+1d4[tireless precision]" if arg.get("tp", False) else ""
+
+ rll = []
+ for x in range(int(arg.last("rr", 1))):
+  thing = vroll(c.d20(adv, min_val=10 if all([ch.csettings["talent"], c.prof >= 1]) else None)+b)
+  rll.append(("Check #"+(x+1), thing, True if thing.total >= DC else False))
+
+ fStrs = ""
+ success = 0
+ for x in rll:
+  fStrs += f'''-f "{x[0]}|{x[1]}|inline" '''
+  success += 1 if x[2] else 0
+ fail = int(arg.last("rr", 1)) - success
+ succFail = "Success!" if rll[0][2] else "Failure!"
+
+ cbStr = "**Monster**: "+cb.name+"\n" if cb else ""
+
+ output = f'''-desc "{name} makes a {cN} check to harvest!" -f "Meta|{cbStr}**CR**: {int(monCR) if str(monCR)[-1] == "0" else monCR}\n**DC**: {DC}" {fStrs} -f "Result|{success+" Successes | "+fail+" Failures" if int(arg.last("rr", 1)) > 1 else succFail}"'''
+
+else:
+ output = f'''-desc "This alias is used to harvest materials from Monsters.\n\n`!harvest <skill> <CR/monster> [args...]`\n\nYou can input a number, fraction, or a monster that's in initiative and the alias will automatically get the DC to successfully harvest." '''
+
+return output
+</drac2>
+-thumb "{{image}}"
+-footer "!harvest made by CodeTheWill#4606 | !harvest ?"
