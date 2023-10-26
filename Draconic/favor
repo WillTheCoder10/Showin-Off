@@ -1,0 +1,56 @@
+embed
+<drac2>
+char = character()
+cc = "Favor"
+l = char.create_cc_nx(cc, 0)
+before = char.cc(cc).value
+tables = load_json(get_gvar("9f26628c-7a72-472b-af08-0be0ae1f636e"))
+random = ''
+choose = ''
+
+if "%1%"[:1] == '+':
+    plus = int("%1%"[1:]) if "%1%"[1:].isdigit() else False
+else:
+    plus = int("%1%") if "%1%".isdigit() else False
+minus = int("%1%"[1:]) if "%1%"[1:].isdigit() and "%1%"[:1] == '-' else False
+sets = int("%2%") if ("%2%".isdigit()) and ("%1%" == "set") else False
+
+if minus != False:
+    char.mod_cc(cc, - int(minus))
+    after = char.cc(cc).value
+    gainloss = name+" loses some "+cc+"!"
+    sign = "(-" + minus + ')'
+elif plus != False:
+    char.mod_cc(cc, + plus)
+    after = char.cc(cc).value
+    gainloss = name+" gains some "+cc+"!"
+    sign = '(+' + plus + ')'
+elif sets != False or str(sets) == "0":
+    char.set_cc(cc, sets)
+    after = char.cc(cc).value
+    difference = after - before
+    gainloss = name+" loses some "+cc+"!" if str(difference)[:1] == '-' else name+" gains some "+cc+"!"
+    sign = f'({difference:,})' if str(difference)[:1] == '-' else f'(+{difference:,})'
+after = char.get_cc(cc)
+
+for x in tables.values():
+    if after >= x[0]["value1"]:
+        random += f'''{x[0]["name"]} ({x[0]["value1"]:,} Favor)\n'''
+    else:
+        random += f'''\nNext rollable table: {x[0]["name"]} ({x[0]["value1"] - after:,} Favor away)'''
+        break
+
+for x in tables.values():
+    if after >= x[0]["value1"]*5:
+        choose += f'''{x[0]["name"]} ({x[0]["value1"]*5:,} Favor)\n'''
+    else:
+        choose += f'''\nNext choosable table: {x[0]["name"]} ({(x[0]["value1"]*5) - after:,} Favor away)'''
+        break
+
+if (not plus) and (not minus) and (not sets) and (str(sets) != "0"):
+    output = f'''-title "{name} checks their Favor!" -desc "You have {after:,} Favor!" -f "Rollable Tables|{random}" -f "Chooseable Tables|{choose}"'''
+else:
+    output = f'''-title "{gainloss}" -f "{cc}|{int(character().cc_str(cc)):,} {sign}" -f "Rollable Tables|{random}" -f "Chooseable Tables|{choose}"'''
+
+return output
+</drac2>
