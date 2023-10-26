@@ -1,0 +1,34 @@
+embed
+<drac2>
+g=load_json(get_gvar('46474571-ac48-402d-a2d1-2793ab510b86'))
+input = "&*&"
+output = ""
+
+boonFound = False
+if input != "":
+  for key, val in g.items():
+    if input.lower() in key.lower():
+      boonD = val[0]['desc']
+      boonN = key
+      boonFound = True
+      break
+
+if all([not boonFound, input != "", input != "help"]):
+  err("'"+input+"' wasn't found. Please make sure you spelled it right, if you need a full list of available boons, use `!boon help`")
+
+if any([input == "", input == "help"]):
+  hb = 0
+  allBoons = ""
+  for boon in g.keys():
+    if all(["(hb)" in boon, hb == 0]):
+      allBoons += "\nHomebrew:\n"
+      hb = 1
+    allBoons += boon.replace(" (hb)", "")+"\n"
+
+  output = f'''-title "Boon Lookup" -desc "This alias is to lookup boon's effects via `!boon <boon name>` (excluding <>.), the current boons available are:\n\nRAW:\n{allBoons}" -footer "Epic Boons | DMG 227 & TWR Homebrew"'''
+
+elif boonFound:
+  output = f'''-title "{boonN.replace(" (hb)", "")}" -desc "{boonD}" -footer {"'Epic Boons | DMG 227'" if "(hb)" not in boonN else "'Epic Boons | TWR Homebrew'"}'''
+
+return output
+</drac2>
