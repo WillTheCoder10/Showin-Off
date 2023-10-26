@@ -1,0 +1,94 @@
+embed
+<drac2>
+output = ""
+table = load_json(get_gvar("9db8b4aa-4a1f-42ba-a854-27eeec6c0356"))
+input = "&*&".lower() if "&*&" else None
+arg = argparse(&ARGS&)
+rolls = int(arg.last("rr", "1")) if arg.last("rr", "1").isdigit() else 1
+
+if any([input == "?", input == "help", input == None]):
+  output = '''-title "Herbs" -desc "This alias is used to roll and search for herbs.\n\nTo roll for random herbs using a set criteria:\n`!herb <type> <location> <rarity> [-rr #]`\nTypes of herbs: Enchantment and Secondary\nLocations: Forest, Swamp, Cave, Grasslands, and Desert\nRarities: Common, Uncommon, Rare, and Vrare\n\nTo search for a herb by name:\n`!herb <herb name>`\n\nTo print this screen:\n`!herb ?`"'''
+
+elif input:
+    typeOfHerb = "&1&".lower()
+    location = "&2&".lower()
+    rarity = "&3&".lower()
+    typeFound = False
+    locationFound = False
+    rarityFound = False
+
+    for key in table:
+      if typeOfHerb in key.lower():
+        typeOfHerb = key
+        typeFound = True
+        for k1 in table[typeOfHerb]:
+          if rarity in k1.lower():
+            rarity = k1
+            rarityFound = True
+            for k2 in table[typeOfHerb][rarity]:
+              if location in k2.lower():
+                location = k2
+                locationFound = True
+
+    randomRoll = False
+    herbFound = False
+
+    if any([not typeFound, not locationFound, not rarityFound]):
+      for key in table["Herbs"]:
+        if input in key.lower():
+          herb = key
+          herbFound = True
+
+    elif table[typeOfHerb][rarity][location] == None:
+      err(f'''There are no {rarity} {typeOfHerb} herbs in the {location}!''')
+
+    else:
+      randomRoll = True
+    
+    if all([randomRoll]):
+      herbsChosen = []
+      for i in range(rolls):
+        herbsChosen.append(randchoice(table[typeOfHerb][rarity][location]))
+
+      herbsND = [] 
+      for i in herbsChosen: 
+        if i not in herbsND: 
+          herbsND.append(i)
+
+      aHF = []
+      for herb in herbsND:
+        herbIN = herbsChosen.count(herb)
+        final = herbIN+"x "+herb
+        if herb == "Silver Hibiscus":
+          typesFinal = []
+          types = []
+          for i in range(0, herbIN):
+            types.append(["Acid", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Poison", "Psychic", "Radiant", "Thunder"][roll("1d10")-1])
+          typesND = []
+          for i in types: 
+            if i not in typesND: 
+              typesND.append(i)
+          for x in typesND:
+            typesFinal.append(types.count(x)+"x "+x)
+          typesFinal.sort(reverse = True, key = lambda x: int(x[:x.index("x")]))
+          final += " ("+", ".join(typesFinal)+")"
+            
+        aHF.append(final)
+
+      aHF.sort(reverse = True, key = lambda x: int(x[:x.find("x")]))
+      allHerbsFound = "\n".join(aHF)
+
+      descIfNeeded = f'''-desc "Searching for {rolls} random {rarity} {typeOfHerb} Herb{'s' if rolls != 1 else ''} in {"a "+location if location != "Grasslands" else "the "+location}..."'''
+
+      output = f'''-title "Herbs" {descIfNeeded} -f "Herbs Found|{allHerbsFound}"'''
+
+
+    else:
+      herbChosen = herb if herbFound else None
+      descIfNeeded = f'''-desc "Searching for '{input.title()}'..."'''
+
+      output = f'''-title "Herbs" {descIfNeeded} -f "{herbChosen}|{table["Herbs"][herbChosen]["desc"]}\n\nType: {table["Herbs"][herbChosen]["type"]} Herb\nRarity: {table["Herbs"][herbChosen]["rarity"]}\nLocation(s) found: {", ".join(table["Herbs"][herbChosen]["locations"])}\n{table["Herbs"][herbChosen]["potion"]}"''' if any([herbFound]) else f'''-title "Herbs" -desc "We couldn\'t find the herb \'{input}\' or you misspelled the type, location, or rarity.\nPlease make sure you spelt everything correctly, use `!herb ?` for help.\n\nIf you are sure you spelt everything correctly and the alias still gives you this error, please DM CodeTheWill#4606 so I can try to rectify the error/bug."'''
+
+return output
+</drac2>
+-footer "!herb made by CodeTheWill#4606 | !herb ?"
