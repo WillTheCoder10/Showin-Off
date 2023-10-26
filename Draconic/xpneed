@@ -1,0 +1,64 @@
+embed
+<drac2>
+arg = argparse(&ARGS&)
+crTable = load_json(get_gvar("9e50f102-c057-4548-a1bf-ebee6015914e"))
+xpTable = load_yaml(get_gvar("6777ee25-c738-4d3a-9560-b48b288a3ab4"))
+n = "\n"
+lvl = character().levels.total_level
+lvl_want = arg.last("lvl", 0, int)
+lvl_found = False
+curr_xp = ceil(float(character().get_cvar("xp", "0")))
+
+xp = xpTable[lvl_want]-curr_xp if lvl_want else int("&1&") if "&1&".isdigit() else xpTable[lvl+1]-curr_xp
+
+if all([curr_xp, "&1&".isdigit()]):
+ for level, xpVal in xpTable.items():
+  if xp+curr_xp <= xpVal:
+   new_lvl = level if not xpTable[level] > curr_xp+xp else level-1
+   lvl_found = True
+   break
+elif curr_xp:
+ new_lvl = lvl_want if lvl_want else lvl+1 if not "&1&".isdigit() else lvl
+ lvl_found = True
+ 
+
+tags = arg.last("tags", 5, int)
+PC = arg.last("pc", 1, int)
+
+tHuntTags = floor(tags/2)
+tHuntXp = ceil((xp*PC)/tHuntTags) if tHuntTags else 0
+tCRNeed = None
+tTooHigh = False
+rHuntXp = ceil((xp*PC)/tags)
+rCRNeed = None
+rTooHigh = False
+
+for cr, xpVal in crTable.items():
+ if all([xpVal >= tHuntXp, not tCRNeed, tHuntTags]):
+  tCRNeed = cr
+ if all([xpVal >= rHuntXp, not rCRNeed]):
+  rCRNeed = cr
+
+ if all([any([tCRNeed, not tHuntTags]), rCRNeed]):
+  break
+
+if tCRNeed == None:
+ tCRNeed = "30"
+ tTooHigh = True
+if rCRNeed == None:
+ rCRNeed = "30"
+ rTooHigh = True
+
+</drac2>
+-title "XP go brr"
+-f "What kind of hunts and at what CR to do them at for a level up:| 
+Self XP needed: `{{f"{xp:,}"}}`
+# of PCs: `{{PC}}` {{f"\nTotal XP needed: `{xp*PC:,}`" if PC > 1 else ""}}
+# of tags: `{{tags}}`{{f"\nLevel: `{lvl} -> {new_lvl} (Current -> New)`" if lvl_found else ""}}
+
+Random hunt xp per tag (expending {{f"{tags} tag{'s' if tags != 1 else ''}"}}) needed:
+`{{f"{rHuntXp:,}"}}`
+CR to meet criteria:
+`{{rCRNeed}} ({{f"{crTable[rCRNeed]:,}"}}xp)`{{f"\nXP amount needed surpasses CR30 via {tags} random hunts, you might need to do this across multiple days." if rTooHigh else ""}}
+
+{{f"Targeted hunt xp per 2 tags (expending {tHuntTags*2} tags) needed:\n`{tHuntXp:,}`\nCR to meet criteria:\n`{tCRNeed} ({crTable[tCRNeed]:,}xp)`{n+'XP amount needed surpasses CR30 via '+tHuntTags+' targeted hunts, you might need to do this across multiple days.' if tTooHigh else ''}" if tHuntTags else "Targeted hunts are not possible with below 2 tags."}}"
