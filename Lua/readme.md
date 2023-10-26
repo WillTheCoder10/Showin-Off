@@ -1,1 +1,1 @@
-This was made for a Minecraft world using ComputerCraft, to automatically move to a charging station when below a certain charge.
+This was made to test my lua knowledge & learn, using a Minecraft world using ComputerCraft as an example, it basically simulates what the "turtle" should do if it is below a certain charge while doing an activity, which is to automatically move to a charging station.
