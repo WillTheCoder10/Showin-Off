@@ -1,0 +1,36 @@
+embed
+<drac2>
+output = ""
+ch = character()
+r = vroll("1d100")
+c = ch.levels.get("Cleric", 0)
+lastDI = float(get("lastSuccessfulDI")) if get("lastSuccessfulDI") else 0
+cc = ch.get_cc("Divine Intervention") if ch.cc_exists("Divine Intervention") else 0
+
+if c == 0:
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "...But they have no Cleric levels."'''
+
+elif cc == 0:
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "...But they have no DIs left."'''
+
+elif all([lastDI != 0, time() < lastDI+604800]):
+  timeLeft = round(lastDI+604800)
+
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "...But they've already had a successful DI in the last 7 days.\nThey can use it again <t:{timeLeft}:R>."'''
+
+elif c == 20:
+  ch.mod_cc("Divine Intervention", - 1)
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "Automatic success!\nYou must wait 7 days before being able to use DI again."'''
+  ch.set_cvar("lastSuccessfulDI", time())
+
+elif r.total <= c:
+  ch.mod_cc("Divine Intervention", - 1)
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "{r}\nSuccess!\nYou must wait 7 days before being able to use DI again."'''
+  ch.set_cvar("lastSuccessfulDI", time())
+
+else:
+  ch.mod_cc("Divine Intervention", - 1)
+  output = f'''-title "{name} calls upon their god and uses Divine Intervention!" -desc "{r}\nFailure."'''
+
+return output
+</drac2>
