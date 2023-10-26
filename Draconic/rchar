@@ -1,0 +1,58 @@
+embed
+-title "Random Character"
+<drac2>
+output = ""
+rtable = load_json(get_gvar('298a1f52-01f5-48b9-af3a-e4d5b39d7914'))
+arg = argparse(&ARGS&)
+input = "&1&".lower() if "&1&" != "&1"+"&" else ""
+number = arg.last("rr", 1, type_=int) if arg.last("rr", "1").isdigit() else 1
+multiple = False
+
+chosenRace = randchoice(list(rtable['race'].keys()))
+chosenSubrace = randchoice(rtable['race'][chosenRace]) if rtable['race'][chosenRace] != None else None
+
+if not number > 1:
+  chosenClass = randchoice(list(rtable['class'].keys()))
+  chosenSubclass = randchoice(rtable['class'][chosenClass])
+else:
+  multiple = True
+  chosenClassesAndSubclasses = []
+  
+  while number != 0:
+    def randChoice():
+      chosenClassRand = randchoice(list(rtable['class'].keys()))
+      if chosenClassRand in chosenClassesAndSubclasses:
+        randChoice()
+      return chosenClassRand
+    chosenClass = randChoice()
+    chosenSubclass = randchoice(rtable['class'][chosenClass])
+    chosenClassesAndSubclasses.append(chosenSubclass+" "+chosenClass)
+    number -= 1
+
+if input == "all":
+  output += f'''-title "Random Character" -f "Race|{chosenSubrace+' '+chosenRace if chosenSubrace != None else chosenRace}" -f "Class|{chosenSubclass+" "+chosenClass if not multiple else "/".join(chosenClassesAndSubclasses)}"  -footer "!rchar - Print the help screen | !rchar [all/race/class] - Print a randomized character | !rchar made by CodeTheWill#4606"'''
+
+elif input == "race":
+  output += f'''-f "Race|{chosenSubrace+" "+chosenRace if chosenSubrace != None else chosenRace}"'''
+
+elif input == "class":
+  clsStr = chosenSubclass+" "+chosenClass if not multiple else ",\n".join(chosenClassesAndSubclasses)
+  output += f'''-f "Class|{clsStr}"'''
+
+elif input == "subclass":
+  Class = " ".join(&ARGS&[1:]).lower() if &ARGS& else None
+  for x in rtable['class'].keys():
+    if Class in x.lower():
+      Class = x
+  try:
+    chosenSubclass = randchoice(rtable['class'][Class])
+  except "KeyError":
+    err(f"{Class} not found. Make sure you spelled it correctly.")
+  output += f'''-f "{Class} Subclass|{chosenSubclass}"'''
+
+else:
+  output += f'''-desc "This alias is to make a completely random character.\n\n`!rchar all` - randomize the Race and Class.\n`!rchar race` - randomize just the Race.\n`!rchar class` - randomize just the Class.\n`!rchar subclass <class>` - randomize a Subclass given a Class."'''
+
+return output
+</drac2>
+-footer "!rchar - Print the help screen | !rchar [all/race/class/subclass] - Print a randomized character | !rchar made by CodeTheWill#4606"
