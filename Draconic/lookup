@@ -1,0 +1,38 @@
+embed
+<drac2>
+table = load_json(get_gvar("354e7550-71af-4e9a-99f3-b91d9614a884"))
+costs = load_json(get_gvar("204e834f-0b89-4952-8af0-c202280e85e7"))
+input = "&*&".replace('"', '').lower()
+
+if input:
+ itemFound = False
+ for k, v in table.items():
+    for k1, v1 in v.items():
+       if not v1:
+           continue
+       for y in v1:
+          if input in y.lower():
+           type = k1
+           rarity = k
+           itemFound = True
+           input = y
+           break
+    if not itemFound:
+       continue
+    else:
+       break
+
+ if not itemFound:
+    err(f'''Couldn't find "{input}" in any table at any rarity.''')
+
+ ogcost = costs[rarity][type][0]
+ cRoll = f'''{int(ogcost[:ogcost.find(" Favor")]):,} Favor'''
+ cChoose = f'''{int(ogcost[:ogcost.find(" Favor")])*5:,} Favor'''
+
+ output = f'''-desc "Item: {input}\nRarity: {rarity}\nTable: {type}\n\nCost to Roll: {cRoll}\nCost to Choose: {cChoose}"'''
+
+else:
+ output = f'''-title "Lookup" -desc "This alias is used to lookup an item's Rarity, Table, and Favor costs found in the loot tables. \n\n`lookup <item>`\nNo quotes necessary. \n\nExample: `!lookup luck blade` would view the Luck Blade's rarity (Super Legendary) and table (Armament), and it's favor costs (2,000 to roll, 10,000 to choose)."'''
+
+return output
+</drac2>
