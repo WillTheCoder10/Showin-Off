@@ -1,0 +1,35 @@
+embed
+<drac2>
+g=load_json(get_gvar('624a692b-9c7e-4815-93eb-e7237299d2e0'))
+input = "&*&"
+output = ""
+
+blessFound = False
+if input != "":
+  for key, val in g.items():
+    if input.lower() in key.lower():
+      blessD = val
+      blessN = key
+      blessFound = True
+      break
+
+if all([not blessFound, input != "", input != "help"]):
+  err("'"+input+"' wasn't found. Please make sure you spelled it right, if you need a full list of available blessings, use `!blessing help`")
+
+if any([input == "", input == "help"]):
+  allBless = ""
+  hb = 0
+
+  for bless in g.keys():
+    if all(["(hb)" in bless, hb == 0]):
+      allBless += "\nHomebrew:\n"
+      hb = 1
+    allBless += bless.replace(" (hb)", "")+"\n"
+
+  output = f'''-title "Blessing Lookup" -desc "This alias is to lookup blessing's effects via `!blessing <blessing name>` (excluding <>.), the current blessings available are:\n\nRAW:\n{allBless}"'''
+
+elif blessFound:
+  output = f'''-title "{blessN.replace("(hb)", "(Homebrew)")}" -desc "{blessD}"'''
+
+return output
+</drac2>
