@@ -1,0 +1,36 @@
+embed
+-title "Passive Skills"
+-thumb "{{image}}"
+<drac2>
+arg = argparse(&ARGS&)
+ch = character()
+skills = {}
+
+found = False
+for x, y in ch.skills:
+ if "&1&" in x:
+  found = True
+  skillN = x
+  skill = y
+  break
+
+if all(["&1&" == "&1"+"&", not found]):
+ found = True
+ skillN = "perception"
+ skill = ch.skills.perception
+
+elif all(["&1&".lower() == "all", not found]):
+ found = True
+ skills = {"perception": ch.skills.perception, "insight": ch.skills.insight, "investigation": ch.skills.investigation}
+
+err(f"The skill '&1&' was not found.") if not found else None
+obs = 5 if all(["observant" in ch.get_cvar("feats", "").lower(), any([skillN == "perception", skillN == "investigation"]) if not skills else 1]) else 0
+adv = [0, 5, -5][arg.adv()]
+b = vroll("+".join(arg.get("b", ["0"])))
+
+skillStr = f'''Perception: 10 + {skills["perception"].value}{" + 5 [observant]" if obs else ""}{" + 5 [adv]" if adv == 5 else " - 5 [dis]" if adv == -5 else ""}{" + "+b.dice if b.total else ""} = `{10+skills["perception"].value+obs+adv+b.total}`\n\nInsight: 10 + {skills["insight"].value}{" + 5 [adv]" if adv == 5 else " - 5 [dis]" if adv == -5 else ""}{" + "+b.dice if b.total else ""} = `{10+skills["insight"].value+adv+b.total}`\n\nInvestigation: 10 + {skills["investigation"].value}{" + 5 [observant]" if obs else ""}{" + 5 [adv]" if adv == 5 else " - 5 [dis]" if adv == -5 else ""}{" + "+b.dice if b.total else ""} = `{10+skills["investigation"].value+obs+adv+b.total}`''' if skills else None
+
+nameP = name+"'s" if name[-1] != "s" else name+"'"
+
+return f'''-f "{nameP} Passive {skillN.title()}|10 + {skill.value}{" + 5 [observant]" if obs else ""}{" + 5 [adv]" if adv == 5 else " - 5 [dis]" if adv == -5 else ""}{" + "+b.dice if b.total else ""} = `{10+skill.value+obs+adv+b.total}`"''' if not skills else f'''-f "{nameP} Passives|{skillStr}"'''
+</drac2>
