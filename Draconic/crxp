@@ -1,0 +1,18 @@
+embed
+-title "XP for CR"
+-desc "<drac2>
+xpList = load_json(get_gvar("9e50f102-c057-4548-a1bf-ebee6015914e"))
+cr = "&1&"
+arg = argparse(&ARGS&)
+pc = int(arg.last("pc")) if arg.get("pc") else 0
+n = "\n"
+
+try:
+ xpCR = xpList[cr]
+except "KeyError":
+ err(f"{cr} isn't a valid CR. CRs include 0-30, including fractions as low as 1/8 and as high as 1/2.")
+
+pcStr = f'''\nWith {str(pc)+" PCs" if pc != 1 else str(pc)+" PC"}, each PC gets {round(xpCR/pc):,}xp.''' if arg.get("pc") else None
+
+return f"a CR{cr} gives {xpCR:,}xp.{pcStr if pcStr else ''}"
+</drac2>"
