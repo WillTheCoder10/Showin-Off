@@ -1,0 +1,286 @@
+{
+  "race": {
+    "Aarakocra":null,
+    "Aasimar": [
+      "Fallen",
+      "Protecter",
+      "Scourge",
+      "Variant"
+    ],
+    "Amonkhet Naga":null,
+    "Autognome":null,
+    "Bugbear":null,
+    "Centaur":null,
+    "Changeling":null,
+    "Custom Lineage":null,
+    "Deurgar":null,
+    "Dragonborn": [
+      "Chromatic",
+      "Draconblood",
+      null,
+      "Gem",
+      "Metallic",
+      "Ravenite"
+    ],
+    "Dwarf": [
+      "Gray",
+      "Hill",
+      "Mountain"
+    ],
+    "Elf": [
+      "Aereni High",
+      "Aereni Wood",
+      "Astral",
+      "Dark",
+      "Eladrin",
+      "High",
+      "Pallid",
+      "Sea",
+      "Shadar-kai",
+      "Valenar High",
+      "Valenar Wood",
+      "Wood"
+    ],
+    "Fairy":null,
+    "Firbolg":null,
+    "Genasi": [
+      "Air",
+      "Earth",
+      "Fire",
+      "Water"
+    ],
+    "Giff":null,
+    "Gith": [
+      "Githyanki",
+      "Githzerai"
+    ],
+    "Gnome": [
+      "Deep",
+      "Forest",
+      "Rock"
+    ],
+    "Goblin":null,
+    "Goliath":null,
+    "Grung":null,
+    "Hadozee":null,
+    "Half-Elf": [
+      "Aquatic",
+      "Drow",
+      null,
+      "High",
+      "Wood"
+],
+    "Half-Orc":null,
+    "Halfling": [
+      "Ghostwise",
+      "Lightfoot",
+      "Lotusden",
+      "Stout"
+],
+    "Harengon":null,
+    "Hobgoblin":null,
+    "Human": [
+      null,
+      "Variant"
+],
+    "Kalashtar":null,
+    "Kenku":null,
+    "Kobold":null,
+    "Leonin":null,
+    "Lineages": [
+      "Dhampir",
+      "Hexblood",
+      "Reborn"
+],
+    "Lizardfolk":null,
+    "Locathah":null,
+    "Loxodon":null,
+    "Minotaur":null,
+    "Orc": [
+      null,
+      "Exandria"
+],
+
+ "Plasmoid":null, 
+ "Thri-kreen":null,
+  "Satyr":null,
+    "Shifter": [
+      "Beasthide",
+      "Longtooth",
+      "Swiftstride",
+      "Wildhunt"
+],
+    "Simic Hybrid":null,
+    "Tabaxi":null,
+    "Tiefling": [
+      "Baalzebul",
+      "Dispater",
+      "Feral",
+      "Fierna",
+      "Glasya",
+      "Levistus",
+      "Mammon",
+      "Mephistopheles",
+      null,
+      "Variant Feral",
+      "Variant",
+      "Zariel"
+],
+    "Tortle":null,
+    "Triton":null,
+    "Vedalken":null,
+    "Verdan":null,
+    "Warforged":null,
+    "Yuan-ti":null
+  },
+  "class": {
+    "Artificer": [
+      "Alchemist",
+      "Armorer",
+      "Artillerist",
+      "Battle Smith"
+    ],
+    "Barbarian": [
+      "Path of Wild Magic",
+      "Path of the Ancestral Guardian",
+      "Path of the Battlerager",
+      "Path of the Beast",
+      "Path of the Berserker",
+      "Path of the Storm Herald",
+      "Path of the Totem Warrior",
+      "Path of the Zealot"
+    ],
+    "Bard": [
+      "College of Creation",
+      "College of Eloquence",
+      "College of Glamour",
+      "College of Lore",
+      "College of Spirits",
+      "College of Swords",
+      "College of Valor",
+      "College of Whispers"
+    ],
+    "Blood Hunter": [
+      "Order of the Ghostslayer",
+      "Order of the Lycan",
+      "Order of the Mutant",
+      "Order of the Profane Soul"
+    ],
+    "Cleric": [
+      "Arcana Domain",
+      "Death Domain",
+      "Forge Domain",
+      "Grave Domain",
+      "Knowledge Domain",
+      "Life Domain",
+      "Light Domain",
+      "Nature Domain",
+      "Order Domain",
+      "Peace Domain",
+      "Tempest Domain",
+      "Trickery Domain",
+      "Twilight Domain",
+      "War Domain"
+    ],
+    "Druid": [
+      "Circle of Dreams",
+      "Circle of Spores",
+      "Circle of Stars",
+      "Circle of Wildfire",
+      "Circle of the Land",
+      "Circle of the Moon",
+      "Circle of the Shepard"
+    ],
+    "Fighter": [
+      "Arcane Archer",
+      "Battle Master",
+      "Cavalier",
+      "Champion",
+      "Echo Knight",
+      "Eldritch Knight",
+      "Psi Warrior",
+      "Purple Dragon Knight",
+      "Rune Knight",
+      "Samurai"
+    ],
+    "Monk": [
+      "Way of Mercy",
+      "Way of Shadow",
+      "Way of the Ascendant Dragon",
+      "Way of the Astral Self",
+      "Way of the Drunken Master",
+      "Way of the Four Elements",
+      "Way of the Kensei",
+      "Way of the Long Death",
+      "Way of the Open Hand",
+      "Way of the Sun Soul"
+    ],
+    "Paladin": [
+      "Oath of Conquest",
+      "Oath of Devotion",
+      "Oath of Glory",
+      "Oath of Redemption",
+      "Oath of Vengeance",
+      "Oath of the Ancients",
+      "Oath of the Crown",
+      "Oath of the Watchers",
+      "Oathbreaker"
+    ],
+    "Ranger": [
+      "Beast Master",
+      "Drakewarden",
+      "Fey Wanderer",
+      "Gloom Stalker",
+      "Horizon Walker",
+      "Hunter",
+      "Monster Slayer",
+      "Swarmkeeper"
+    ],
+    "Rogue": [
+      "Arcane Trickster",
+      "Assassin",
+      "Inquisitive",
+      "Mastermind",
+      "Phantom",
+      "Scout",
+      "Soulknife",
+      "Swashbuckler",
+      "Thief"
+    ],
+    "Sorcerer": [
+      "Aberrant Mind",
+      "Clockwork Soul",
+      "Divine Soul",
+      "Draconic Bloodline",
+      "Shadow Magic",
+      "Storm Sorcery",
+      "Wild Magic"
+    ],
+    "Warlock": [
+      "The Archfey",
+      "The Celestial",
+      "The Fathomless",
+      "The Fiend",
+      "The Genie",
+      "The Great Old One",
+      "The Hexblade",
+      "The Undead",
+      "The Undying"
+    ],
+    "Wizard": [
+      "Bladesinging",
+      "Chronurgy Magic",
+      "Graviturgy Magic",
+      "Order of Scribes",
+      "School of Abjuration",
+      "School of Conjuration",
+      "School of Divination",
+      "School of Enchantment",
+      "School of Evocation",
+      "School of Illusion",
+      "School of Necromancy",
+      "School of Transmutation",
+      "War Magic"
+    ]
+  }
+}

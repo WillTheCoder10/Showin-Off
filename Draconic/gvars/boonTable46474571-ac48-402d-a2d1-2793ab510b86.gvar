@@ -1,0 +1,119 @@
+{
+  "Boon of Combat Prowess": [{
+    "desc":"When you miss with a melee weapon attack, you can choose to hit instead. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Dimensional Travel": [{
+    "desc":"As an action, you can cast the Misty Step spell, without using a spell slot or any components. Once you do so, you can't use this boon again until you finish a short rest."
+  }],
+  "Boon of Fate": [{
+    "desc":"When another creature that you can see within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can roll a d10 and apply the result as a bonus or penalty to the roll. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Fortitude": [{
+    "desc":"Your hit point maximum increases by 40."
+  }],
+  "Boon of High Magic": [{
+    "desc":"You gain one 9th-level spell slot, provided that you already have one."
+  }],
+  "Boon of Immortality": [{
+    "desc":"You stop aging. You are immune to any effect that would age you, and you can't die from old age."
+  }],
+  "Boon of Invincibility": [{
+    "desc":"When you take damage from any source, you can reduce that damage to 0. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Irresistible Offense": [{
+    "desc":"You can bypass the damage resistances of any creature."
+  }],
+  "Boon of Luck": [{
+    "desc":"You can add a d10 roll to any ability check, attack roll, or saving throw you make. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Magic Resistance": [{
+    "desc":"You have advantage on saving throws against spells and other magical effects."
+  }],
+  "Boon of Peerless Aim": [{
+    "desc":"You can give yourself a +20 bonus to a ranged attack roll you make. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Perfect Health": [{
+    "desc":"You are immune to all diseases and poisons, and you have advantage on Constitution saving throws."
+  }],
+  "Boon of Planar Travel": [{
+    "desc":"When you gain this boon, choose a plane of existence other than the Material Plane. You can now use an action to cast the Plane Shift spell (no spell slot or components required), targeting yourself only, and travel to the chosen plane, or from that plane back to the Material Plane. Once you use this boon, you can't use it again until you finish a short rest."
+  }],
+  "Boon of Quick Casting": [{
+    "desc":"Choose one of your spells of 1st through 3rd level that has a casting time of 1 action. That spell's casting time is now 1 bonus action for you."
+  }],
+  "Boon of Recovery": [{
+    "desc":"You can use a bonus action to regain a number of hit points equal to half your hit point maximum. Once you use this boon, you can't use it again until you finish a long rest."
+  }],
+  "Boon of Resilience": [{
+    "desc":"You have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons."
+  }],
+  "Boon of Skill Proficiency": [{
+    "desc":"You gain proficiency in all skills."
+  }],
+  "Boon of Speed": [{
+    "desc":"Your walking speed increases by 30 feet. In addition, you can use a bonus action to take the Dash or Disengage action. Once you do so, you can't do so again until you finish a short rest."
+  }],
+  "Boon of Spell Mastery": [{
+    "desc":"Choose one 1st-level sorcerer, warlock, or wizard spell that you can cast. You can now cast that spell at its lowest level without expending a spell slot."
+  }],
+  "Boon of Spell Recall": [{
+    "desc":"You can cast any spell you know or have prepared without expending a spell slot. Once you do so, you can't use this boon again until you finish a long rest."
+  }],
+  "Boon of the Fire Soul": [{
+    "desc":"You have immunity to fire damage. You can also cast Burning Hands (save DC 15) at will, without using a spell slot or any components."
+  }],
+  "Boon of the Night Spirit": [{
+    "desc":"While completely in an area of dim light or darkness, you can become invisible as an action. You remain invisible until you take an action or a reaction."
+  }],
+  "Boon of the Stormborn": [{
+    "desc":"You have immunity to lightning and thunder damage. You can also cast Thunderwave (save DC 15) at will, without using a spell slot or any components."
+  }],
+  "Boon of the Unfettered": [{
+    "desc":"You have advantage on ability checks made to resist being grappled. In addition, you can use an action to automatically escape a grapple or free yourself of restraints of any kind."
+  }],
+  "Boon of Truesight": [{
+    "desc":"You have truesight out to a range of 60 feet."
+  }],
+  "Boon of Undetectability": [{
+    "desc":"You gain a +10 bonus to Dexterity (Stealth) checks, and you can't be detected or targeted by divination magic, including scrying sensors."
+  }],
+  "Boon of Attunement (hb)": [{
+    "desc":"As an action, you can unattune to a single magic item, unless the item is cursed, and as part of the same action you can attune to a different magic item, as long as you meet any prerequisites.\n\nYou can take this action 3 times per day."
+  }],
+  "Boon of Dimensional Travel (Updated) (hb)": [{
+    "desc": "Whenever you move, you may instead expend movement and teleport an amount of feet equal to the expended movement to an area you can see. You may do this an amount of times equal to your proficiency bonus, regaining all expended uses on a short or long rest."
+  }],
+  "Boon of Elemental Expertise (hb)": [{
+   "desc":"**Prerequisites:** Elemental Adept Feat\n\nThe chosen element for this boon is the element chosen in the elemental adept feat. If you have taken the feat multiple times, you may choose which of these elements applies to this boon. This element cannot be later changed.\n\nYou can treat immunity to the given element as resistance. this resistance cannot be overcome by the elemental adept feat.\n\nWhen you cast a spell of 5th level or lower that deals damage of your chosen element, you can choose to treat all damage dice rolled as their maximum amount. once you use this feature, you cannot do so again until you finish a long rest."
+  }],
+  "Boon of Fate (Updated) (hb)": [{
+    "desc": "When another creature that you can see within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can roll a d10 and apply the result as a bonus or penalty to the roll. You may do this an amount of times equal to your proficiency bonus, regaining all expended uses at the next dawn."
+  }],
+  "Boon of Implacable Terror (hb)": [{
+    "desc":"You can bypass the frightened condition immunity on creatures"
+  }],
+  "Boon of Life's Embrace (hb)": [{
+    "desc": "You have a certain level of mastery over positive energies.  You have resistance to necrotic damage, and your maximum hp cannot be reduced.\nAdditionally, when you cast a spell or use an ability that restores hit points to other creatures, you may apply one of the following additional effects to targets other than yourself:\n\n- One of the targets gains double the hit points.\n- All of the targets benefit from a Lesser Restoration\n- The targets regain lost maximum hp equal to twice the healing done.\n\nAdding on an effect can be done an amount of times equal to your proficiency bonus, resetting upon finishing a long rest."
+  }],
+  "Boon of Limited Magic Immunity (hb)": [{
+   "desc":"**Prerequisite**: Boon of Magic Resistance\n\nYou may not be affected or detected by spells of 3rd level and lower unless you choose to be. (Disclaimer that upcasting spells past third level bypasses this immunity)"
+  }],
+  "Boon of Martial Maneuverability (hb)": [{
+    "desc":"**Prerequisite**: Proficiency in all Martial Weapons\n\nExtensive training with martial weapons has allowed you to use them more effectively.\n\nYou may treat any melee weapon with the two-handed property as having the versatile property with the following conversions:\n- Glaive (1d8/1d10)\n- Greataxe (1d10/1d12)\n- Greatclub (1d6/1d8)\n- Greatsword (2d5/2d6)\n- Halberd (1d8/1d10)\n- Maul (2d5/2d6)\n- Pike (1d8/1d10)\n\nAdditionally, being small sized does not impose disadvantage on attacks made with weapons with the heavy property, unless you are using it with one hand."
+  }],
+  "Boon of the Magical Gardener (hb)": [{
+    "desc": "You gain a +5 bonus on Arcana, Nature, or Survival checks made to discern plants. In addition, you may cast the spell *Find Familiar* and summon a Chwinga (Missing it's magical gift) using it."
+  }],
+  "Boon of the Phoenix (hb)": [{
+    "desc":"**Prerequisite:** Boon of the Fire Soul\n\nWhen you would receive fire damage, you instead heal for half the amount of damage that would be dealt to you.\n\n***Fire Form.*** The recipient of this boon can move through a space as narrow as 1 inch wide without squeezing. Any creature that touches the phoenix or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage. In addition, the recipient of this boon can enter a hostile creature’s space and stop there. The first time it enters a creature’s space on a turn, that creature takes 5 (1d10) fire damage. With a touch, the recipient of this boon can also ignite flammable objects that aren’t worn or carried (no action required).\n\n***Fiery Death and Rebirth.*** When the recipient of this boon dies, it explodes. Each creature within 60-feet of it must make a DC 20 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one. The fire ignites flammable objects in the area that aren’t worn or carried.\n\nThe explosion destroys the recipient's body and items and leaves behind an egg-shaped cinder that weighs 5 pounds. The cinder is blazing hot, dealing 21 (6d6) fire damage to any creature that touches it, though no more than once per round. The cinder is immune to all damage, and after 1d6 days, it hatches a new Phoenix. Due to the strain put on the Phoenix’s soul, this forces a new prestige, requiring a small tattooed Roman numeral on their body to increase by one. The tattoo can be placed wherever this boon recipient wishes."
+  }],
+  "Boon of the Shapechanger (hb)": [{
+    "desc": "The CR range for wildshape, shapechange, and polymorph is increased by half of your post 20 level rounded down. This does not function for things such as chain polymorphing, shapechanging, etc; For example you cannot poly into a CR23 creature, then a CR26, then CR29. You are limited to CR23 at lvl 20 with 6 post 20 levels. For clarity, available CR is 21 at lvl 20p2, 22 at 20p4, and 23 at 20p6."
+  }],
+  "Boon of the Troll's Heart (hb)": [{
+    "desc": "You regain 5 hitpoints at the start of your turn. If you are damaged by fire, acid, or radiant damage, this trait ceases to function until your next short or long rest."
+  }],
+  "Boon of Vampiric Strikes (hb)": [{
+    "desc": "Your melee weapon attacks deal an additional 1d8 necrotic damage. Additionally, you regain hit points equal to half the amount of necrotic damage dealt by this boon, unless the target is an undead or construct."
+  }]
+}

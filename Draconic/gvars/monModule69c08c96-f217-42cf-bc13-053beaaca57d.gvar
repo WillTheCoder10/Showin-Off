@@ -1,0 +1,22 @@
+# monster related functions
+
+monTable = load_json(get_gvar("51559a02-2c02-4434-9984-9bc7550045ba"))
+xpTable = load_json(get_gvar("9e50f102-c057-4548-a1bf-ebee6015914e"))
+
+def find_mon(inputtedMon):
+ """Gets a monster's full name, CR, and XP in a tuple (in that order) given a partial or full name.
+If multiple partial matches are found, it will return a SafeList of tuples."""
+ listOfMonFound = []
+ for CR, Monsters in monTable.items():
+  for monster in Monsters:
+   if inputtedMon.lower() == monster.lower():
+    return (monster, CR, xpTable[CR])
+ else:
+  for CR, Monsters in monTable.items():
+   for monster in Monsters:
+    if inputtedMon.lower() in monster.lower():
+     listOfMonFound.append((monster, CR, xpTable[CR]))
+  if not listOfMonFound:
+   return (None, "Monster not found")
+  else:
+   return listOfMonFound if len(listOfMonFound) > 1 else listOfMonFound [0]

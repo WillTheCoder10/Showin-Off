@@ -1,0 +1,27 @@
+# favor related functions
+
+favorCosts = load_json(get_gvar("61ef26e0-e83e-47d0-8a10-626a37e9b55c"))
+favorItems = load_json(get_gvar("354e7550-71af-4e9a-99f3-b91d9614a884"))
+
+def get_favor_table(rarity, type):
+ """Gets the favor table's full name, cost, and items in a tuple (in that order) given a rarity and type.
+Accepts partial parameters, as it will fuzzy search for a match."""
+
+ for x, v in favorCosts.items():
+  if rarity.lower() in x.lower():
+   rarity = x
+   for x1, v1 in v.items():
+    if type.lower() in x1.lower():
+     type = x1
+     cost = v1
+     break
+   break
+
+ try:
+  items = favorItems[rarity][type]
+ except "KeyError":
+  return "Rarity or Type not found."
+
+ table = f"{rarity} {type}"
+
+ return (table, cost, items)

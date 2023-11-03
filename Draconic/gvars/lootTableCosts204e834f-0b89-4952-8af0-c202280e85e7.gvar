@@ -1,0 +1,44 @@
+{
+    "Common": {
+        "Wondrous": ["10 Favor"],
+        "Armaments": ["10 Favor"],
+        "Consumables": ["5 Favor"],
+        "+Weapons": null,
+        "+Armors": null
+    },
+    "Uncommon": {
+        "Wondrous": ["25 Favor"],
+        "Armaments": ["25 Favor"],
+        "Consumables": ["12 Favor"],
+        "+Weapons": ["20 Favor"],
+        "+Armors": ["20 Favor"]
+    },
+    "Rare": {
+        "Wondrous": ["75 Favor"],
+        "Armaments": ["75 Favor"],
+        "Consumables": ["37 Favor"],
+        "+Weapons": ["60 Favor"],
+        "+Armors": ["60 Favor"]
+    },
+    "VRare": {
+        "Wondrous": ["300 Favor"],
+        "Armaments": ["300 Favor"],
+        "Consumables": ["150 Favor"],
+        "+Weapons": ["240 Favor"],
+        "+Armors": ["240 Favor"]
+    },
+    "Legendary": {
+        "Wondrous": ["1000 Favor"],
+        "Armaments": ["1000 Favor"],
+        "Consumables": ["500 Favor"],
+        "+Weapons": null,
+        "+Armors": ["800 Favor"]
+    },
+    "Super Legendary": {
+        "Wondrous": ["2000 Favor"],
+        "Armaments": ["2000 Favor"],
+        "Consumables": null,
+        "+Weapons": null,
+        "+Armors": null
+    }
+}

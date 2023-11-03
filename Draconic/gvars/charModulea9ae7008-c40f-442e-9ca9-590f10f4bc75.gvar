@@ -1,0 +1,14 @@
+# character related functions
+
+harvestDC = {"0": 13, "4": 17, "9": 21, "14": 24, "19": 26}
+herbDC = {"normal": {"common": 10, "uncommon":13, "rare":17, "vrare":20}, "target":{"common":13, "uncommon":17, "rare":20, "vrare":23}}
+herbBook = load_json(get_gvar("9db8b4aa-4a1f-42ba-a854-27eeec6c0356"))
+
+def find_skill(skillName="perception"):
+ """Gets a skill's name and value in a SafeDict, with the keys 'name' and 'value' respectively.
+Accepts partial parameters, as it will fuzzy search for a match."""
+ for skill, value in character().skills:
+  if skillName.lower() in skill.lower():
+   return {"name": skill, "value": value}
+ else:
+  return None

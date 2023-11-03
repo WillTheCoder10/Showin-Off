@@ -1,0 +1,17 @@
+# math related functions
+
+def clamp(num, min_value, max_value):
+ """Enter a number, a minimum, and a maximum, and it will return the number if it is within the given range. Otherwise, it will return the minimum or maximum number depending on what the number given is closer to."""
+ return max(min(num, max_value), min_value)
+
+def get_delta_time(timestamp):
+ """Gets the amount of days, hours, minutes, and seconds that have passed in a tuple (in that order) given an amount of seconds."""
+ day = timestamp // 86400
+ timestamp %= 86400
+ hour = timestamp // 3600
+ timestamp %= 3600
+ minute = timestamp // 60
+ timestamp %= 60
+ second = timestamp
+
+ return (day, hour, minute, second)

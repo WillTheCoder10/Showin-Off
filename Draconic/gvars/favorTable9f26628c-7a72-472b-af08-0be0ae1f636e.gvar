@@ -1,0 +1,62 @@
+{
+  "Common Consumable": [{
+    "name":"Common Consumable",
+    "value1":5
+  }],
+  "Common": [{
+    "name":"Common Armament/Wondrous",
+    "value1":10
+  }],
+  "Uncommon Consumable": [{
+    "name":"Uncommon Consumable",
+    "value1":12
+  }],
+  "Uncommon Weapons/Armor": [{
+    "name":"Uncommon +Weapons/Armor",
+    "value1":20
+  }],
+  "Uncommon": [{
+    "name":"Uncommon Armament/Wondrous",
+    "value1":25
+  }],
+  "Rare Consumable": [{
+    "name":"Rare Consumable",
+    "value1":37
+  }],
+  "Rare Weapons/Armor": [{
+    "name":"Rare +Weapons/Armor",
+    "value1":60
+  }],
+  "Rare": [{
+    "name":"Rare Armament/Wondrous",
+    "value1":75
+  }],
+  "Very Rare Consumable": [{
+    "name":"Very Rare Consumable",
+    "value1":150
+  }],
+  "Very Rare Weapons/Armor": [{
+    "name":"Very Rare +Weapons/Armor",
+    "value1":240
+  }],
+  "Very Rare": [{
+    "name":"Very Rare Armament/Wondrous",
+    "value1":300
+  }],
+  "Legendary Consumable": [{
+    "name":"Legendary Consumable",
+    "value1":500
+  }],
+  "Legendary Weapons/Armor": [{
+    "name":"Legendary +Armor",
+    "value1":800
+  }],
+  "Legendary": [{
+    "name":"Legendary Armament/Wondrous",
+    "value1":1000
+  }],
+  "Super Legendary": [{
+    "name":"Super Legendary Armament/Wondrous",
+    "value1":2000
+  }]
+}

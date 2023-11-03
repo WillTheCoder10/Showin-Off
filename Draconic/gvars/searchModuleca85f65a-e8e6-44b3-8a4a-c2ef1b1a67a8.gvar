@@ -1,0 +1,32 @@
+# search functions
+
+def recurse_search(terms, toSearch, lastThing="Placeholder"):
+ """Parse through an entire dictionary until the specified term is found. If multiple terms are given, it'll follow that path of terms and search through that dataset instead of the entire dictionary. Will also keep track of the name of the last key."""
+ if len(terms) == 1:
+  term = terms[0]
+  for key, value in toSearch.items():
+   if term.lower() in key.lower():
+    return [key, value, lastThing]
+
+   elif typeof(value) == "SafeDict":
+    thing = recurse_search([term], value, key)
+
+    if thing:
+     return thing
+
+  else:
+   return None
+
+ elif len(terms) > 1:
+  for key, value in toSearch.items():
+   if terms[0].lower() in key.lower():
+    newTerms = terms[1:]
+
+    if typeof(value) == "SafeDict":
+     thing = recurse_search(newTerms, value, key)
+
+     if thing:
+      return thing
+
+  else:
+   return None

@@ -1,0 +1,92 @@
+Luck Blade:
+ dataList: [["1d4-1", "With ### Wishes"], [["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar"], "Sword Type: &&&"]]
+
+Spell Bottle:
+ dataList: [["1d6-1", "&&&"]]
+
+Bead of Force:
+ dataList: [["1d4+4", "Containing ### Beads of Force"]]
+
+Vocal Drops:
+ dataList: [["1d10+5","Containing ### Vocal Drops"]]
+
+Sovereign Glue:
+ dataList: [["1d6+1", "Containing ### Ounces of Glue"]]
+
+Restorative Ointment:
+ dataList: [["1d4+1", "Containing ### Doses"]]
+
+Rod of Absorption:
+ dataList: [["1d10", "With ### Levels of Spell Energy"]]
+
+Dragonlance:
+ dataList: [[["Pike", "Lance"],"Weapon Type: &&&"]]
+
+Vorpal Weapon (hb):
+ dataList: [[['Battleaxe', 'Double-bladed Scimitar', 'Scimitar', 'Greataxe', 'Greatsword', 'Longsword', 'Shortsword', 'Whip', 'Halberd', 'Glaive', 'Handaxe', 'Sickle'], "Weapon Type: &&&"]]
+
+Updated Flame Tongue (hb):
+ dataList: [[['Scythe', 'Cestus', 'Battleaxe', 'Club', 'Dagger', 'Double-bladed Scimitar', 'Flail', 'Glaive', 'Greataxe', 'Greatclub', 'Greatsword', 'Halberd', 'Handaxe', 'Hoopak', 'Lance', 'Light Hammer', 'Longsword', 'Mace', 'Maul', 'Morningstar', 'Pike', 'Quarterstaff', 'Rapier', 'Scimitar', 'Shortsword', 'Sickle', 'Spear', 'Trident', 'War Pick', 'Warhammer', 'Whip'], "Weapon Type: &&&"]]
+
+Dragon Wing Bow (Any Bow):
+ dataList: [[['Longbow', 'Shortbow', 'Crossbow, hand', 'Crossbow, light', 'Crossbow, heavy'], "Bow Type: &&&"]]
+
+Dragon Slayer:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Dragonscale Knuckles:
+ dataList: [[["Red", "Green", "Blue", "Black", "White", "Gold", "Brass", "Copper", "Silver", "Bronze", "Sapphire", 'Emerald', 'Amethyst', 'Crystal', 'Topaz'], "Dragon Type: &&&"]]
+
+Chromatic Rose:
+ dataList: [[["Black", "Blue", "Green", "Red", "White"], "&&&"]]
+
+Sword of Life Stealing:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Holy Avenger:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Acheron Blade:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Sword of Wounding:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Berserker Axe:
+ dataList: [[["Handaxe", "Battleaxe", "Greataxe"], "Axe Type: &&&"]]
+
+Crystal Blade:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Gambler’s Blade:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar"], "Sword Type: &&&"]]
+
+Vicious Weapon:
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Weapon of Certain Death:
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Weapon of Warning:
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Corpse Slayer:
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Giant Slayer:
+ dataList: [[["Shortsword", "Longsword", "Greatsword", "Rapier", "Scimitar", "Double-bladed Scimitar", "Handaxe", "Battleaxe", "Greataxe"], "Axe/Sword Type: &&&"]]
+
+Armor of Resistance:
+ dataList: [[["Acid", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Poison", "Psychic", "Radiant", "Thunder"], "Damage Resistance: &&&"], [["Padded", "Leather", "Studded Leather", "Hide", "Chain Shirt", "Scale Mail", "Breastplate", "Half Plate", "Ring Mail", "Chain Mail", "Splint", "Plate"], "Armor Type: &&&"]]
+
+Elemental weapon +1 (hb):
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Elemental weapon +2 (hb):
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Elemental Weapon +3 (hb):
+ dataList: [[["Cestus", "Scythe", "Pistol", "Musket", "Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Yklwa", "Crossbow, Light", "Dart", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Double-bladed Scimitar", "Shortsword", "Trident", "War Pick", "Warhammer", "Whip", "Blowgun", "Crossbow, Hand", "Crossbow, Heavy", "Longbow", "Net"], "Weapon Type: &&&"]]
+
+Bow of Silence (hb):
+ dataList: [[["Longbow", "Shortbow", "Crossbow, Light", "Crossbow, Hand", "Crossbow, Heavy"], "Bow Type: &&&"]]

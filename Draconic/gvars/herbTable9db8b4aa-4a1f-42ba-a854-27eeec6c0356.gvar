@@ -1,0 +1,260 @@
+{
+    "Enchantment": {
+        "Common": {
+            "Forest":["Nightshade Berries"],
+            "Swamp": ["Scillia Beans", "Nightshade Berries"],
+            "Cave":null,
+            "Grasslands": ["Scillia Beans", "Milkweed Seeds"],
+            "Desert":["Milkweed Seeds"]
+        },
+        "Uncommon": {
+            "Forest": ["Ironwood Heart", "Verdant Nettle", "Silver Hibiscus", "Nightshade Berries", "Primordial Balm"],
+            "Swamp": ["Hydrathistle", "Silver Hibiscus", "Wild Sageroot", "Nightshade Berries", "Spineflower Berries"],
+            "Cave": ["Hydrathistle", "Primordial Balm", "Spineflower Berries"],
+            "Grasslands": ["Coal Toadstool", "Ironwood Heart", "Wild Sageroot"],
+            "Desert": ["Coal Toadstool", "Verdant Nettle", "Primordial Balm"]
+        },
+        "Rare": {
+            "Forest": ["Dried Ephedra", "Fiend's Ivy", "Nightshade Berries", "Primordial Balm", "Hypnos' Grace"],
+            "Swamp": ["Blue Toadshade", "Fiend's Ivy", "Wrackwort Bulbs", "Nightshade Berries", "Hypnos' Grace"],
+            "Cave": ["Blue Toadshade", "Luminous Cap Dust", "Rock Vine", "Primordial Balm"],
+            "Grasslands": ["Cosmos Gland", "Luminous Cap Dust", "Wrackwort Bulbs"],
+            "Desert": ["Cosmos Gland", "Dried Ephedra", "Rock Vine", "Wrackwort Bulbs", "Primordial Balm"]
+        },
+        "Vrare": {
+            "Forest": ["Mortflesh Powder", "Phorus Blossoms", "Tail Leaf", "Wisp Stalks", "Nightshade Berries", "Primordial Balm", "Hypnos' Grace"],
+            "Swamp": ["Devil's Bloodleaf", "Voidroot", "Nightshade Berries", "Hypnos' Grace"],
+            "Cave": ["Mortflesh Powder", "Voidroot", "Wisp Stalks", "Primordial Balm"],
+            "Grasslands": ["Devil's Bloodleaf", "Phorus Blossoms", "Tail Leaf"],
+            "Desert": ["Tail Leaf", "Voidroot", "Primordial Balm"]
+        }
+    },
+    "Secondary": {
+        "Common/Uncommon": {
+            "Forest": ["Lavender Sprig", "Bloodgrass"],
+            "Swamp": ["Lavender Sprig", "Bloodgrass"],
+            "Cave": ["Gengko Bush", "Bloodgrass"],
+            "Grasslands": ["Lavender Sprig", "Bloodgrass"],
+            "Desert": ["Gengko Bush", "Bloodgrass"]
+        },
+        "Rare/Vrare": {
+            "Forest": ["Mandrake Root"],
+            "Swamp": ["Chronus Slime"],
+            "Cave": ["Chronus Slime"],
+            "Grasslands": ["Mandrake Root"],
+            "Desert": ["Mandrake Root"]
+        }
+    },
+    "Herbs": {
+        "Bloodgrass": {
+            "desc": "The most boring, common plant life found in the wild is this dark brown grass. It has absolutely no remarkable qualities, other than being relatively harmless and its use as basic sustenance when properly prepared. Herbalists do not find this grass very unique, but still tend to collect it as it occupies almost no space in their packs.",
+            "type": "Secondary",
+            "locations": ["All terrain"],
+            "rarity": "Common/Uncommon",
+            "potion": "Can be used to make any Common/Uncommon potion"
+        },
+        "Blue Toadshade": {
+            "desc": "Another common mushroom is this dark blue cap with a yellow striped stem. When disturbed, this mushroom lets off a puff of blue powder. Usually this causes no permanent harm to the surrounding creatures, but it can stain their skin and equipment for a short while. The powder is commonly used to color various inks and dyes. Herbalists usually search for the fungi around small watering holes, where aquatic life often thrives.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Swamp"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Gaseous Form"
+        },
+        "Coal Toadstool": {
+            "desc": "This mushroom is oftentimes found in dry and arid climates, and typically sprouts in areas with charred grass or the burnt remains of other plant life. Opening up one of these mushrooms without caution can lead to the sample burning up when exposed to air.",
+            "type": "Enchantment",
+            "locations": ["Desert", "Grasslands"],
+            "rarity": "Uncommon",
+            "potion": "Can be used to make a Potion of Fire Breath"
+        },
+        "Chromus Slime": {
+            "desc": "This thin slime substance is often observed to flow within water current as if it had a mind of its own. Oftentimes, herbalists mistake this slime with mercury, as it has the same consistency and look. When attempting to alter the slime, it reverberates and alters the other plant life it touches instead.",
+            "type": "Secondary",
+            "locations": ["Cave", "Swamp"],
+            "rarity": "Rare/Vrare",
+            "potion": "Can be used to make any Rare/Vrare potion"
+        },
+        "Cosmos Gland": {
+            "desc": "This uncommon four-leafed plant is notorious for being somewhat difficult to find. This is mostly due to the plant growing about 5 feet underneath the ground, and only peeking out during its final maturity. However, it has an uncanny look of the stars in the night sky amongst its leaves.",
+            "type": "Enchantment",
+            "locations": ["Grasslands", "Desert"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Clairvoyance"
+        },
+        "Devil's Bloodleaf": {
+            "desc": "Known for its red and yellow petals, this large and bold red leaf has been a symbol for prosperity and good health in households. The crimson hues provide a dim glow when crushed.",
+            "type": "Enchantment",
+            "locations": ["Swamp", "Grasslands"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Vitality"
+        },
+        "Dried Ephedra": {
+            "desc": "A bush often found in dry environments, it is thorny and hard to harvest without scratching your skin. It has a distinct dark purple hue when viewed at a distance, but up close it looks black. When the thorn's liquid contents are carefully extracted, they act as catalysts for various power enhancements and strengthen existing potions.",
+            "type": "Enchantment",
+            "locations": ["Desert", "Forest"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Max Power"
+        },
+        "Fiend's Ivy": {
+            "desc": "These long, red thorn-encrusted vines can stretch up to 3 feet long and have sharp thorns that reach up to an inch or two long. It isn't rare to find blood stains amongst these vines as many animals and adventurers can easily trip or get caught in a bushel of the vines. The vines also seem to have a sentient quality to them as they relax when prey is near, and contract when captured.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Swamp"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Mind Reading"
+        },
+        "Gengko Bush": {
+            "desc": "This bush is filled with flourishing green leaves, tipped with gold coloration as a result of the unusual sugar that runs within. Often used as a thickening agent in potions, the sugars are used to condense syrupy textures in concoctions.",
+            "type": "Secondary",
+            "locations": ["Cave", "Desert"],
+            "rarity": "Common/Uncommon",
+            "potion": "Can be used to make any Common/Uncommon potion"
+        },
+        "Hydrathistle": {
+            "desc": "Named for its appearance, this three-pronged blue and black flower is often found in dark and dank environments. With a similar appearance of gill flaps, the flower flourishes near wet conditions.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Swamp"],
+            "rarity": "Uncommon",
+            "potion": "Can be used to make a Potion of Water Breathing"
+        },
+        "Ironwood Heart": {
+            "desc": "This gnarled white seed is commonly found in the nooks of Ironwood Trees. These large seeds pulse with a slow repetitive beat when gripped tightly, often referred to as “Nature's Heartbeat”. After a short period of time, these seeds expand rapidly in size to form the tree if they remain undisturbed.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Grasslands"],
+            "rarity": "Uncommon",
+            "potion": "Can be used to make a Potion of Growth"
+        },
+        "Lavender Sprig": {
+            "desc": "These long stemmed purple-petal flowers can often be found swaying in the wind in huge patches. They are very common amongst green environments and have a distinct sweet smell. However, they taste extremely bitter when eaten.",
+            "type": "Secondary",
+            "locations": ["Forest", "Grasslands", "Swamp"],
+            "rarity": "Common/Uncommon",
+            "potion": "Can be used to make any Common/Uncommon potion"
+        },
+        "Luminous Cap Dust": {
+            "desc": "This powder can be shaken from the glowing yellow mushrooms often found in extremely dark environments and it keeps an ember-like glow for about a week after extraction. Known as a 'beacon of light' in dark environments, the mushrooms are typically visible from a distance at night.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Grasslands"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Heroism"
+        },
+        "Mandrake Root": {
+            "desc": "This tan root has serrated edges all along its body that often cause injury to Herbalists that do not properly know how to handle it. When stripped of its outer skin, the soft tender center can be eaten with relative ease and is often used by herbalists as an agent of stronger concoctions.",
+            "type": "Secondary",
+            "locations": ["Forest", "Grasslands", "Swamp"],
+            "rarity": "Rare/Vrare",
+            "potion": "Can be used to make any Rare/Vrare potion"
+        },
+        "Milkweed Seeds": {
+            "desc": "These small, white translucent seeds can be found when opening up a Milkweed Flower. They are often eaten by children due to their friendly look, but can cause negative digestive effects this way. When crushed up and diluted with other herbs, these seeds offer positive digestive effects.",
+            "type": "Enchantment",
+            "locations": ["Grasslands, Desert"],
+            "rarity": "Common",
+            "potion": "Can be used to make a Potion of Watchful Rest"
+        },
+        "Mortflesh Powder": {
+            "desc": "This dark purple powder is often found growing on top of moss in dark, cold environments. This powder is often used as makeup for young men and women to reduce the look of age from their faces.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Forest"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Longevity"
+        },
+        "Nightshade Berries": {
+            "desc": "These light blue berries can be found in small clumped packs among small bushes in lush environments. They can be safely ingested and are often eaten by wild animals for their sweet, but tangy flavor. A skilled Herbalist can enhance the berries' natural ability to affect a person's health in positive ways.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Swamp"],
+            "rarity": "Different Rarities",
+            "potion": "Can be used to make differing rarities of a Potion of Healing"
+        },
+        "Phorus Blossoms": {
+            "desc": "These orange and yellow tinted flowers are grown from trees, and typically ripen into mundane fruits. However, if the blossoms are extracted before the ripening period, the raw pollen within can be shaped into a concoction that provides the user inspiration about the future.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Grasslands"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Possibility"
+        },
+        "Primordial Balm": {
+            "desc": "This thick substance has been observed changing its coloring, almost at will. The balm is unusually warm to the touch, and can seem to retain heat for weeks on end. Rumors amongst herbalists state that this balm originates from the realm of the giants, and can provide fragments of a giant's power if prepared properly.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Forest", "Desert"],
+            "rarity": "Different Rarities",
+            "potion": "Can be used to make differing rarities of a Potion of Giant Strength"
+        },
+        "Rock Vine": {
+            "desc": "This extremely hardened dark green vine can be found growing in the ground near very old minerals, often seeming to feed off the minerals themselves. At first glance, this vine seems completely useless, but herbalism studies have shown this vine to harden a person's skin significantly if combined with a powerful catalyst.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Desert"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Invulnerability"
+        },
+        "Scillia Beans": {
+            "desc": "These light brown beans can occasionally be found hanging from Scillia Bushes in dry atmosphere environments. They are often used to enhance flavors in stew and other meals but have a much stranger effect. At full potency, some of these beans can offer enhanced stamina and grip strength to the consumer.",
+            "type": "Enchantment",
+            "locations": ["Swamp", "Grasslands"],
+            "rarity": "Common",
+            "potion": "Can be used to make a Potion of Climbing"
+        },
+        "Silver Hibiscus": {
+            "desc": "This silver-gray plant looks as though it represents madness itself. It often has random patterns, colors, and unplanned shapes, but always has a web-like pattern on it. This plant is resistant to almost every type of environment, as is rumored to sprout from the energies of foreign planes of existence.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Swamp"],
+            "rarity": "Uncommon",
+            "potion": "Can be used to make a Potion of Resistance"
+        },
+        "Tail Leaf": {
+            "desc": "This very fuzzy, dark green leaf looks like a circle with three thick strands hanging from it. When held, the leaf itself feels as though it is vibrating, and animals that ingest the leaf are shown to have increased heart rate and breathing speeds.",
+            "type": "Enchantment",
+            "locations": ["Desert", "Forest", "Grasslands"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Speed"
+        },
+        "Voidroot": {
+            "desc": "This dark gray thick root is often found amongst the most extreme environments. It seems to vary in growth rate per root. Herbalists tend to be very careful when they extract this root from the ground, as it seems to defy gravity and want to 'fly' away.",
+            "type": "Enchantment",
+            "locations": ["Cave", "Swamp"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Flying"
+        },
+        "Wild Sageroot": {
+            "desc": "One of the ingredients found among a herbalist's equipment would be these light pink roots. They measure about 3 to 5 inches in length and have a smooth, fuzzy texture to them that provide momentarily clarity and accuracy to one's actions.",
+            "type": "Enchantment",
+            "locations": ["Swamp", "Grasslands"],
+            "rarity": "Uncommon",
+            "potion": "Can be used to make a Potion of Advantage"
+        },
+        "Wisp Stalks": {
+            "desc": "This incredibly rare fungi has become something of a fable amongst herbalists. It is reported to have a large bulbous cap growing atop a thin stem, and to normally form in small clusters deep within damp cave environments and forests. The organism is usually a translucent blue, and is rumored to disappear and reappear randomly.",
+            "type": "Enchantment",
+            "locations": ["Forest", "Cave"],
+            "rarity": "Vrare",
+            "potion": "Can be used to make a Potion of Invisibility"
+        },
+        "Wrackwort Bulbs": {
+            "desc": "These huge white bulbs can be found on small yellow mushrooms often found in swamps or wet caverns. The mushroom releases a puff of powder from these bulbs when threatened and it tends to confuse and hinder a person, causing the victim to shrink it on themselves temporarily.",
+            "type": "Enchantment",
+            "locations": ["Swamp", "Grasslands", "Desert"],
+            "rarity": "Rare",
+            "potion": "Can be used to make a Potion of Diminution"
+        },
+        "Hypnos' Grace": {
+            "desc":"This organism is a tiny carnivorous plant that has wide, trifoliate leaves which each have different colors. It grows 3 small flowers under the leaves and only one of these flowers are harmless and leak a liquid akin to tree sap while the other flowers emit a pheromone to cause small prey to slay themselves on top of the flower where they quickly decompose so they can absorb their nutrients.",
+            "type":"Enchantment",
+            "locations":["Swamp", "Forest"],
+            "rarity": "Rare/Vrare (varies)",
+            "potion":"Can be used to make a Potion of Mind Control"
+        },
+        "Verdant Nettle": {
+            "desc":"With its dark green and yellow speckled mesh, this plant can be easily spotted. It normally grows in forests and can catch a person’s feet when traveling if they do not have proper footing. This plant is typically found in areas where animals gather, such as springs.",
+            "type":"Enchantment",
+            "locations":["Forest", "Desert"],
+            "rarity":"Uncommon",
+            "potion":"Can be used to make a Potion of Animal Friendship"
+        },
+        "Spineflower Berries": {
+           "desc":"Often found hanging amongst the bone-like flowers, this white berry can be harvested and crushed to enhance toxins made by scoundrels. However, the concoctions made from this berry are identical to those made from nightshade berries, which can be difficult to identify from even the most skilled alchemist.",
+           "type":"Enchantment",
+           "locations":["Swamp", "Cave"],
+           "rarity":"Uncommon",
+           "potion":"Can be used to make a Potion of Poison"
+        }
+    }
+}

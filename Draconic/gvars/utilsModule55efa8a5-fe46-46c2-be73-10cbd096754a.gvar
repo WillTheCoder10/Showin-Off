@@ -1,0 +1,11 @@
+# utils
+# This module is used for general utility in CodeTheWill#4606's aliases
+
+using(
+favor="5bbfb287-39d6-4875-865f-5e7374fe37e9",
+mon="69c08c96-f217-42cf-bc13-053beaaca57d",
+char="a9ae7008-c40f-442e-9ca9-590f10f4bc75",
+math="6b7e616f-9b5b-4efe-9e65-e59a5999988b",
+kemi="dbd94617-501d-4210-a774-b9b26c9f29d7",
+search="ca85f65a-e8e6-44b3-8a4a-c2ef1b1a67a8"
+)

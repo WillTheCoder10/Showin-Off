@@ -1,0 +1,19 @@
+{
+  "Blessing of Health":"Your Constitution score increases by 2, up to a maximum of 22.",
+
+  "Blessing of Magic Resistance":"You have advantage on saving throws against spells and other magical effects.",
+
+  "Blessing of Protection":"You gain a +1 bonus to AC and saving throws.",
+
+  "Blessing of Understanding":"Your Wisdom score increases by 2, up to a maximum of 22.",
+
+  "Blessing of Valhalla":"This blessing grants you the power to summon spirit warriors, as if you had blown a silver Horn of Valhalla. Once you use this blessing, you can't use it again until 7 days have passed.",
+
+  "Blessing of Weapon Enhancement":"One nonmagical weapon in your possession becomes a +1 weapon whenever you wield it.",
+
+  "Blessing of Wound Closure":"This blessing grants you the benefits of a Periapt of Wound Closure.",
+
+  "Blessing of Arvandor (hb)":"Once every 7 days you can summon 1d4+2 Spectral Warriors to fight by your side for 1 hour. These warriors use the same statblock as the Bandit captain, but can be flavored as any relevant type of ally.",
+
+  "Blessing of Moradin (hb)":"Your crafting tools are enchanted by the gods.\n\n15% reduction to your crafting time."
+}
